@@ -12,7 +12,7 @@ var Config *Configuration
 func init() {
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatal("Error loading .env file")
+		log.Fatalf("Error loading .env file, err=%+v\n", err)
 		os.Exit(1)
 	}
 

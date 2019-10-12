@@ -288,7 +288,7 @@ func TestTakeOrder(t *testing.T) {
 
 				bs, _ := json.Marshal(params)
 
-				req, _ := http.NewRequest("PATCH", host+"/orders/" + fmt.Sprint(orderId), bytes.NewBuffer(bs))
+				req, _ := http.NewRequest("PATCH", host+"/orders/"+fmt.Sprint(orderId), bytes.NewBuffer(bs))
 				resp, err := http.DefaultClient.Do(req)
 				if assert.Nil(t, err) {
 					defer resp.Body.Close()
@@ -310,7 +310,7 @@ func TestTakeOrder(t *testing.T) {
 
 				bs, _ := json.Marshal(params)
 
-				req, _ := http.NewRequest("PATCH", host+"/orders/" + fmt.Sprint(orderId), bytes.NewBuffer(bs))
+				req, _ := http.NewRequest("PATCH", host+"/orders/"+fmt.Sprint(orderId), bytes.NewBuffer(bs))
 				resp, err := http.DefaultClient.Do(req)
 				if assert.Nil(t, err) {
 					defer resp.Body.Close()
@@ -355,7 +355,7 @@ func TestTakeOrder(t *testing.T) {
 
 				bs, _ := json.Marshal(params)
 
-				req, _ := http.NewRequest("PATCH", host+"/orders/" + fmt.Sprint(orderId), bytes.NewBuffer(bs))
+				req, _ := http.NewRequest("PATCH", host+"/orders/"+fmt.Sprint(orderId), bytes.NewBuffer(bs))
 				resp, err := http.DefaultClient.Do(req)
 				if assert.Nil(t, err) {
 					defer resp.Body.Close()
@@ -400,8 +400,8 @@ func TestTakeOrder(t *testing.T) {
 
 				bs, _ := json.Marshal(params)
 
-				req1, _ := http.NewRequest("PATCH", host+"/orders/" + fmt.Sprint(orderId), bytes.NewBuffer(bs))
-				req2, _ := http.NewRequest("PATCH", host+"/orders/" + fmt.Sprint(orderId), bytes.NewBuffer(bs))
+				req1, _ := http.NewRequest("PATCH", host+"/orders/"+fmt.Sprint(orderId), bytes.NewBuffer(bs))
+				req2, _ := http.NewRequest("PATCH", host+"/orders/"+fmt.Sprint(orderId), bytes.NewBuffer(bs))
 
 				ch := make(chan *http.Response, 2)
 
